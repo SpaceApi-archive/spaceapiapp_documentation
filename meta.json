@@ -1,0 +1,13 @@
+{
+    "App": "Documentation",
+    "Description": "The Space API reference.",
+    "Authors": [
+        {
+            "Name": "Romain Schmitz",
+            "Nickname": "Slopjong",
+            "Hackerspace": "Syn2cat"
+        }
+    ],
+    "License": "",
+    "Created": "30.5.2013"
+}

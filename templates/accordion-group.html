@@ -1,0 +1,18 @@
+
+    <!-- an accordion group -->
+    <div class="accordion-group">
+
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse"
+               data-parent="#documentation-ref-%SPECS_VERSION%-%ACCORDION_ID%"
+               href="#documentation-ref-%SPECS_VERSION%-%PROPERTY_PATH%">
+                <i class="%REQUIRED_ICON%">&nbsp;</i>%PROPERTY% (%PROPERTY_TYPE%)
+            </a>
+        </div>
+
+        <div id="documentation-ref-%SPECS_VERSION%-%PROPERTY_PATH%" class="accordion-body collapse in">
+            <div class="accordion-inner">
+                {ACCORDION_GROUP_INNER}
+            </div>
+        </div>
+    </div>

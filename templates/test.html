@@ -1,0 +1,67 @@
+<!-- an accordion group -->
+<div class="accordion-group">
+
+    <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse"
+           data-parent="#documentation-ref-%SPECS_VERSION%-%ACCORDION_ID%"
+           href="#documentation-ref-%SPECS_VERSION%-%PROPERTY_PATH%">
+            <i class="%REQUIRED_ICON%">&nbsp;</i> %PROPERTY% (%PROPERTY_TYPE%)
+        </a>
+    </div>
+
+    <div id="documentation-ref-%SPECS_VERSION%-%PROPERTY_PATH%" class="accordion-body collapse in">
+        <div class="accordion-inner" style="">
+
+            <div style="display: none !important">
+                <table>
+                    <tr>
+                        <td style="width: 150px; text-align: right; vertical-align: top;">Description</td>
+                        <td>%PROPERTY_DESCRIPTON%</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; vertical-align: top;">
+                            Nested elements
+                        </td>
+                        <td>
+                            %PROPERTY_NESTED_ELEMENTS%
+                        </td>
+                    </tr>
+                </table>
+            </div><!-- end hidden -->
+
+            <div style="display: %VISIBILITY_PROPERTY_DESCRIPTON%;">
+                <div>Description</div>
+                <div>%PROPERTY_DESCRIPTON%</div>
+            </div>
+
+            <div style="display: %VISIBILITY_PROPERTY_ENUM%;">
+                <div>Allowed values</div>
+                <div>%PROPERTY_ENUM%</div>
+            </div>
+
+            <!-- if the property is an array this specifies the minimum amount -->
+            <div style="display: %VISIBILITY_PROPERTY_AMOUNT_MIN%;">
+                <div>Minimum amount</div>
+                <div>%PROPERTY_AMOUNT_MIN%</div>
+            </div>
+
+            <!-- if the property is an array this specifies the maximum amount -->
+            <div style="display: %VISIBILITY_PROPERTY_AMOUNT_MAX%;">
+                <div>Maximum amount</div>
+                <div>%PROPERTY_AMOUNT_MAX%</div>
+            </div>
+
+            <!-- if the property is an array this specifies the element data type -->
+            <div style="display: %VISIBILITY_PROPERTY_ITEM_TYPE%;">
+                <div>Data type of array elements</div>
+                <div>%PROPERTY_ITEM_TYPE%</div>
+            </div>
+
+            <div style="display: %VISIBILITY_PROPERTY_NESTED_ELEMENTS%;">
+                <div>Nested elements</div>
+                <div>%PROPERTY_NESTED_ELEMENTS%</div>
+            </div>
+
+        </div>
+    </div>
+</div>
