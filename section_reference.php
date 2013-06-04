@@ -42,7 +42,20 @@ class Accordion {
             {
                 switch($sub_specs->type)
                 {
-                    //case "array":
+                    case "array":
+
+                        // if the array elements are of the type 'object'
+                        // then we need to iterate over them too
+                        if (property_exists($sub_specs, "items") &&
+                            property_exists($sub_specs->items, "type") &&
+                            $sub_specs->items->type == "object")
+                        {
+                            if (property_exists($sub_specs->items, "properties"))
+                                $sub_accordion = new Accordion($sub_specs->items->properties, $this->specs_version, $sub_id);
+                        }
+
+                        break;
+
                     case "object":
 
                         if(property_exists($sub_specs, "properties"))
