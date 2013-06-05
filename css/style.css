@@ -19,3 +19,19 @@ a i {
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+#left-tab-filters .span4 {
+    width: 260px;
+}
+
+#left-tab-filters .span6 {
+    width: 260px;
+}
+
+.documentation-content-page {
+    overflow-x: hidden;
+}
+
+#left-tab-filters ol {
+    margin-left: 40px;
+}

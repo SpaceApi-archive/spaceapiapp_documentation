@@ -32,7 +32,7 @@ class Filterkeys
     {
         return make_columns(
             $this->filterkeys_of_other_type, /* the data to be split into multiple columns */
-            4, /* amount of columns */
+            3, /* amount of columns */
             array(
                 'list_type' => 'ol',
                 'row_id' => 'filters-overview',
@@ -45,7 +45,7 @@ class Filterkeys
     {
         return make_columns(
             $this->filterkeys_of_sensor_type, /* the data to be split into multiple columns */
-            3, /* amount of columns */
+            2, /* amount of columns */
             array(
                 'list_type' => 'ol',
                 'row_id' => 'filters-sensors',
