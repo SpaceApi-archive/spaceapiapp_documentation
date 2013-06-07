@@ -25,7 +25,7 @@ a i {
 }
 
 #left-tab-filters .span6 {
-    width: 260px;
+    width: 320px;
 }
 
 .documentation-content-page {
@@ -35,3 +35,32 @@ a i {
 #left-tab-filters ol {
     margin-left: 40px;
 }
+
+.list_filters a
+{
+    text-decoration: none;
+}
+
+.tooltip.left {
+    margin-left: -12px;
+}
+
+.list_filters ul {
+    list-style: none;
+}
+
+.list_filters .tooltip {
+}
+
+.list_filters .tooltip.in {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+/*
+.tooltip.in hr {
+    margin: 3px;
+    width: 100%;
+    border-width: 1px;
+}
+*/

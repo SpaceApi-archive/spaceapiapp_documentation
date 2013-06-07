@@ -8,7 +8,9 @@ $(document).ready(function(){
     $('#documentation-specs-tab a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
-    })
+    });
     
     $(".collapse").collapse();
+
+    $(".list_filters a").tooltip({html:true});
 });
