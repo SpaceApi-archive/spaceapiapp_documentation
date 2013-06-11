@@ -116,6 +116,17 @@ class Accordion {
                         $accordion_group_inner
                     );
                 }
+                else if(property_exists($sub_specs, "items") &&
+                    property_exists($sub_specs->items, "enum") &&
+                    !empty($sub_specs->items->enum))
+                {
+                    $visibility = "";
+                    $accordion_group_inner = str_replace(
+                        "%PROPERTY_ENUM%",
+                        join(", ", $sub_specs->items->enum),
+                        $accordion_group_inner
+                    );
+                }
 
                 $accordion_group_inner = str_replace("%VISIBILITY_PROPERTY_ENUM%", $visibility, $accordion_group_inner);
                 unset($visibility);
