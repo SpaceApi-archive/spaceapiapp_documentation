@@ -17,7 +17,7 @@ $html = <<<HTML
     "contact": {
         "twitter": "@spaceapi"
     },
-    "issue-report-channels": [
+    "issue_report_channels": [
         "twitter"
     ],
     "state": {
@@ -42,14 +42,12 @@ $html = <<<HTML
         <pre class="spaceapi-box documentation-example-feeds"><code>{
     /* put here all the fields from the minimal example */
     ...
-    "feeds": [
-        {
-            "name": "blog",
+    "feeds": {
+        "blog": {
             "type": "application/rss+xml",
             "url": "https://example.com/feed/"
         },
-        {
-            "name": "events",
+        "calendar": {
             "type": "text/calendar",
             "url": "https://example.com/events.ics"
         }
