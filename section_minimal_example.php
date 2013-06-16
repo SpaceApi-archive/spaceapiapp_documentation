@@ -35,7 +35,7 @@ $html = <<<HTML
     ],
     "cache": {
         "schedule": "m.02"
-    },
+    }
 }
 </code></pre>
 
@@ -51,7 +51,7 @@ $html = <<<HTML
             "type": "text/calendar",
             "url": "https://example.com/events.ics"
         }
-    ]
+    }
 }
 </code></pre>
 
@@ -63,15 +63,15 @@ $html = <<<HTML
             "name": "Signal",
             "url": "http://signal.hackerspaces.org:8090/signal.mp3",
             "type": "mp3",
-            "start": "1370704469",
-            "end": "1370781235",
+            "start": "2013-06-10T12:00+02:00",
+            "end": "2013-06-10T13:00+02:00"
         },
         {
             "name": "Random",
             "url": "http://85.214.64.213:8060/;",
             "type": "mp3",
-            "start": "1370781235",
-            "end": "1370801005",
+            "start": "2013-06-13T09:00+02:00",
+            "end": "2013-06-13T12:00+02:00"
         }
     ]
 }
