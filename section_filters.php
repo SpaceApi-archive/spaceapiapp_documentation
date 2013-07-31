@@ -145,7 +145,6 @@ $filters = new Filterkeys();
 
 //$page->addContent("<h2>Filters</h2>");
 
-$site_url = SITE_URL;
 $html = <<<HTML
 <p>
     The <a href="directory">directory</a> aggregates hackerspaces that provide an endpoint of their Space API implementation. The directory can then be loaded by web apps to do cool things such as rendering a map.
@@ -163,10 +162,10 @@ Endpoints can also be filtered by their version with the <code>api</code> argume
 
 <p>
     <ul>
-        <li><a href="http://$site_url/directory.json?api=0.12" target="_blank">directory.json?api=0.12</a> (exact this version)</li>
-        <li><a href="http://$site_url/directory.json?api=!0.12" target="_blank">directory.json?api=!0.12</a> (all versions but not this one)</li>
-        <li><a href="http://$site_url/directory.json?api=<0.12" target="_blank">directory.json?api=<0.12</a> (older than this version)</li>
-        <li><a href="http://$site_url/directory.json?api=>0.12" target="_blank">directory.json?api=>0.12</a> (newer than this version)</li>
+        <li><a href="http://%SITEURL%/directory.json?api=0.12" target="_blank">directory.json?api=0.12</a> (exact this version)</li>
+        <li><a href="http://%SITEURL%/directory.json?api=!0.12" target="_blank">directory.json?api=!0.12</a> (all versions but not this one)</li>
+        <li><a href="http://%SITEURL%/directory.json?api=<0.12" target="_blank">directory.json?api=<0.12</a> (older than this version)</li>
+        <li><a href="http://%SITEURL%/directory.json?api=>0.12" target="_blank">directory.json?api=>0.12</a> (newer than this version)</li>
     </ul>
 </p>
 
@@ -182,7 +181,7 @@ Endpoints can also be filtered by their version with the <code>api</code> argume
             <td>Get all the space JSONs which include the <code>contact</code> or <code>feeds</code> field.</td>
             <td><pre><code>or( contact , feeds )</code></pre>
 
-                        Try <a href="http://$site_url/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
+                        Try <a href="http://%SITEURL%/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
         </tr>
     </table>
     -->
@@ -193,8 +192,8 @@ HTML;
 
 $page->addContent($html);
 
-$page->addScript("/c/js/jquery-ui/jquery-ui-1.9.2/ui/jquery-ui.js");
-$page->addStylesheet("c/js/jquery-ui/jquery-ui-1.9.2/themes/jquery-ui-bootstrap/jquery-ui-1.9.2.custom.css");
+$page->addScript("/c/js/jquery-ui/jquery-ui-1.9.2/ui/jquery-ui.js", true);
+$page->addStylesheet("c/js/jquery-ui/jquery-ui-1.9.2/themes/jquery-ui-bootstrap/jquery-ui-1.9.2.custom.css", true);
 
 $html = <<<HTML
 
@@ -211,7 +210,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>contact</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a id="clicklink" href="http://$site_url/directory.json?filter=contact" target="_blank">directory.json?filter=contact</a></td>
+        <td>Link:</td><td><a id="clicklink" href="http://%SITEURL%/directory.json?filter=contact" target="_blank">directory.json?filter=contact</a></td>
     </tr>
 </table>
 
@@ -226,7 +225,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>or( contact , feeds )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
     </tr>
 </table>
 
@@ -241,7 +240,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>and( contact.irc , contact.phone )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=and(contact.irc,contact.phone)" target="_blank">directory.json?filter=and(contact.irc,contact.phone)</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=and(contact.irc,contact.phone)" target="_blank">directory.json?filter=and(contact.irc,contact.phone)</a></td>
     </tr>
 </table>
 
@@ -256,7 +255,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>and( contact , feeds , or( sensors , stream ) )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=and(contact,feeds,or(sensors,stream))" target="_blank">directory.json?filter=and(contact,feeds,or(sensors,stream))</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=and(contact,feeds,or(sensors,stream))" target="_blank">directory.json?filter=and(contact,feeds,or(sensors,stream))</a></td>
     </tr>
 </table>
 
@@ -277,7 +276,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>contact</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=contact" target="_blank">directory.json?filter=contact</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=contact" target="_blank">directory.json?filter=contact</a></td>
     </tr>
 </table>
 
@@ -292,7 +291,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>or( contact , feeds )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=or(contact,feeds)" target="_blank">directory.json?filter=or(contact,feeds)</a></td>
     </tr>
 </table>
 
@@ -308,7 +307,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>and( contact.irc , contact.phone )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=and(contact.irc,contact.phone)" target="_blank">directory.json?filter=and(contact.irc,contact.phone)</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=and(contact.irc,contact.phone)" target="_blank">directory.json?filter=and(contact.irc,contact.phone)</a></td>
     </tr>
 </table>
 
@@ -326,7 +325,7 @@ $html = <<<HTML
         <td>Expression:</td><td><code>and( contact , feeds , or( sensors , stream ) )</code></td>
     </tr>
     <tr>
-        <td>Link:</td><td><a href="http://$site_url/directory.json?filter=and(contact,feeds,or(sensors,stream))" target="_blank">directory.json?filter=and(contact,feeds,or(sensors,stream))</a></td>
+        <td>Link:</td><td><a href="http://%SITEURL%/directory.json?filter=and(contact,feeds,or(sensors,stream))" target="_blank">directory.json?filter=and(contact,feeds,or(sensors,stream))</a></td>
     </tr>
 </table>
 </blockquote>

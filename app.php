@@ -5,49 +5,13 @@
 
 if(!defined("APPSDIR"))
     die("Direct access is not allowed!");
-
-$app_dir = realpath(dirname(__FILE__));
-// remove the full path of the document root
-$app_dir = str_replace(ROOTDIR, "", $app_dir);
-
-$page->setActivePage(basename($app_dir));
-
 //********************************************************************
 
-//********************************************************************
-// Access to the backend
 
-// define the auto class loader
-function class_loader($classname)
-{
-    $classfile = CLASSDIR . "$classname.class.php";
+$page->addStylesheet("css/style.css");
+$page->addScript("scripts/documentation.js");
 
-    if (file_exists($classfile))
-    {
-        require_once($classfile);
-        return true;
-    }
-
-    // this is not so ideal, when the config cannot be loaded this fails
-    // so just be sure the Config class is always included!
-    $logger = KLogger::instance(LOGDIR, DEBUG_LEVEL);
-    $logger->logEmerg("The class '$classname' cannot be loaded!");
-
-    return false;
-}
-
-spl_autoload_register("class_loader");
-
-// whenever the backend classes are used, we most probably need the logger and the SAPI constant
-$logger = KLogger::instance(LOGDIR, DEBUG_LEVEL);
-define('SAPI', 'apache');
-
-//********************************************************************
-
-$page->addStylesheet("$app_dir/css/style.css");
-$page->addScript("$app_dir/scripts/documentation.js");
-
-include("$app_dir/draft_warning.php");
+include("draft_warning.php");
 
 // start left tabs
 $page->addContent('
@@ -68,6 +32,8 @@ $page->addContent('
       <p>Howdy, I'm in Section 2.</p>
     </div>
 */
+
+$app_dir = APPSDIR . $page->activePage();
 
 // first tab
 $page->addContent('<div class="tab-pane active" id="left-tab-reference">');
