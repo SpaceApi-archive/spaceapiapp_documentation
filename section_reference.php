@@ -24,9 +24,9 @@ class Accordion {
         global $app_dir;
 
         // load the templates
-        $accordion_template = file_get_contents("$app_dir/templates/accordion.html");
-        $accordion_group_template = file_get_contents("$app_dir/templates/accordion-group.html");
-        $accordion_group_inner_template = file_get_contents("$app_dir/templates/accordion-group-inner.html");
+        $accordion_template = file_get_contents("templates/accordion.html");
+        $accordion_group_template = file_get_contents("templates/accordion-group.html");
+        $accordion_group_inner_template = file_get_contents("templates/accordion-group-inner.html");
 
         // create the accordion groups
         $accordion_groups = "";

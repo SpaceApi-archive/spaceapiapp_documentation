@@ -33,23 +33,23 @@ $page->addContent('
     </div>
 */
 
-$app_dir = APPSDIR . $page->activePage();
+//$app_dir = APPSDIR . $page->activePage();
 
 // first tab
 $page->addContent('<div class="tab-pane active" id="left-tab-reference">');
 //$page->addContent("<h2>Reference</h2>");
 //include("$app_dir/ref_notice.php");
-include("$app_dir/section_reference.php");
+include("section_reference.php");
 $page->addContent('</div>');
 
 // second tab
 $page->addContent('<div class="tab-pane" id="left-tab-examples">');
-include("$app_dir/section_minimal_example.php");
+include("section_minimal_example.php");
 $page->addContent('</div>');
 
 // third tab
 $page->addContent('<div class="tab-pane" id="left-tab-filters">');
-include("$app_dir/section_filters.php");
+include("section_filters.php");
 $html = <<<HTML
     <div id="directory-tabs">
         <!--
