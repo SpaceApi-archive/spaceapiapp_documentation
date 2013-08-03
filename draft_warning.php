@@ -1,5 +1,6 @@
 <?php
 
+/*
 $page->addContent('
     <div class="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -26,3 +27,4 @@ $page->addContent('
         </p>
     </div>
 ');
+*/
