@@ -84,8 +84,15 @@ class Accordion {
             //--------------------------------
             $field_type = "";
             if(property_exists($sub_specs, "type"))
-                $field_type = $sub_specs->type;
-
+            {
+                // multiple types are allowed in a JSON schema
+                // this is also the way to create a tristate variable which is either
+                // of the type boolean or null.
+                if(is_array($sub_specs->type))
+                    $field_type = join(', ', $sub_specs->type);
+                else
+                    $field_type = $sub_specs->type;
+            }
             $accordion_group = str_replace("%PROPERTY_TYPE%", $field_type, $accordion_group);
 
             /*** start accordion group inner ***/
